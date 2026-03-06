@@ -1,0 +1,1 @@
+import{d as o,c as n,s as r,e as t,v as c,n as l,o as p}from"./index-DBLIi86r.js";const f=o({__name:"CardFooter",props:{class:{}},setup(s){const e=s;return(a,m)=>(p(),n("div",{class:r(t(c)("flex items-center p-6 pt-0",e.class))},[l(a.$slots,"default")],2))}});export{f as _};
