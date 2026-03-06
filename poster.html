@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐造AI - 开学季Scratch课程海报</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Noto Sans SC',sans-serif}
+        .poster{width:800px;height:1200px;background:linear-gradient(135deg,#1e3a8a,#1e40af);position:relative;overflow:hidden}
+        .poster::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='40' cy='40' r='20'/%3E%3C/g%3E%3C/svg%3E")}
+        .poster-inner{position:relative;z-index:1;padding:50px;text-align:center;color:white;height:100%;display:flex;flex-direction:column}
+        .badge{background:#f59e0b;color:#fff;font-weight:700;padding:12px 40px;font-size:1.4rem;display:inline-block;border-radius:50px;margin-bottom:30px;box-shadow:0 8px 20px rgba(245,158,11,0.4)}
+        .logo{font-size:2.2rem;font-weight:800;margin-bottom:20px;letter-spacing:4px}
+        .title{font-size:4rem;font-weight:800;margin-bottom:15px;line-height:1.1;text-shadow:0 4px 20px rgba(0,0,0,0.3)}
+        .subtitle{font-size:1.6rem;opacity:0.9;margin-bottom:40px}
+        .course-icon{width:180px;height:180px;background:rgba(255,255,255,0.15);border-radius:30px;margin:0 auto 35px;display:flex;align-items:center;justify-content:center;font-size:80px;border:3px solid rgba(255,255,255,0.3)}
+        .course-name{font-size:2.2rem;font-weight:700;margin-bottom:25px}
+        .course-desc{font-size:1.1rem;opacity:0.85;line-height:1.8;margin-bottom:40px;padding:0 30px}
+        .price-box{background:white;border-radius:20px;padding:30px 50px;margin-bottom:35px}
+        .price-label{font-size:1.2rem;color:#64748b;margin-bottom:10px}
+        .price{font-size:4rem;font-weight:800;color:#1e40af;line-height:1}
+        .price span{font-size:1.8rem}
+        .price-original{font-size:1.2rem;color:#94a3b8;text-decoration:line-through;margin-top:8px}
+        .features{display:flex;justify-content:center;gap:30px;margin-bottom:40px;flex-wrap:wrap}
+        .feature{background:rgba(255,255,255,0.15);padding:15px 25px;border-radius:12px;font-size:1rem}
+        .contact{background:rgba(255,255,255,0.1);border-radius:16px;padding:25px;margin-top:auto}
+        .contact-title{font-size:1.1rem;margin-bottom:15px;opacity:0.9}
+        .contact-info{display:flex;justify-content:center;align-items:center;gap:40px}
+        .contact-item{text-align:center}
+        .contact-label{font-size:0.9rem;opacity:0.7;margin-bottom:5px}
+        .contact-value{font-size:1.1rem;font-weight:600}
+        .qr-placeholder{width:120px;height:120px;background:white;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:0.8rem}
+        .footer{margin-top:30px;font-size:0.9rem;opacity:0.7}
+    </style>
+</head>
+<body>
+<div class="poster">
+<div class="poster-inner">
+<div class="badge">🎓 开学季特惠</div>
+<div class="logo">乐造AI</div>
+<h1 class="title">Scratch<br>图形化编程</h1>
+<p class="subtitle">让孩子在玩耍中掌握编程思维</p>
+
+<div class="course-icon">🧊</div>
+<div class="course-name">✨ Scratch 图形化编程</div>
+<p class="course-desc">
+专为6-10岁孩子设计<br>
+拖拽式编程，零门槛入门<br>
+64课时，20+项目作品<br>
+培养计算思维，激发创造力
+</p>
+
+<div class="price-box">
+<div class="price-label">🎉 开学季一口价</div>
+<div class="price"><span>¥</span>1499</div>
+<div class="price-original">原价 ¥2999</div>
+</div>
+
+<div class="features">
+<div class="feature">🎯 8人小班</div>
+<div class="feature">👨‍🏫 名师授课</div>
+<div class="feature">🏆 竞赛辅导</div>
+</div>
+
+<div class="contact">
+<div class="contact-title">📮 联系我们</div>
+<div class="contact-info">
+<div class="contact-item">
+<div class="contact-label">电话</div>
+<div class="contact-value">待补充</div>
+</div>
+<div class="contact-item">
+<div class="contact-label">地址</div>
+<div class="contact-value">河源市源城区东江首府</div>
+</div>
+<div class="contact-item">
+<div class="contact-label">扫码咨询</div>
+<div class="qr-placeholder">二维码<br>待补充</div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+让每个孩子都能创造未来
+</div>
+</div>
+</div>
+</body>
+</html>
