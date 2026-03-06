@@ -4,294 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>乐造AI - 开学季易拉宝</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Noto Sans SC',sans-serif;background:#0a0a0a;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px}
-        
-        /* 易拉宝竖版 - 高端黑白金风格 */
-        .poster{
-            width:450px;
-            height:1200px;
-            background:#0c0c0c;
-            position:relative;
-            overflow:hidden
-        }
-        
-        /* 顶部装饰 */
-        .top-decor{
-            height:8px;
-            background:linear-gradient(90deg,#c9a227,#f4d03f,#c9a227)
-        }
-        
-        /* 底部装饰 */
-        .bottom-decor{
-            position:absolute;
-            bottom:0;
-            left:0;
-            right:0;
-            height:6px;
-            background:linear-gradient(90deg,#c9a227,#f4d03f,#c9a227)
-        }
-        
-        /* 左侧装饰条 */
-        .left-line{
-            position:absolute;
-            left:0;
-            top:0;
-            bottom:0;
-            width:4px;
-            background:linear-gradient(180deg,#c9a227,#f4d03f)
-        }
-        
-        /* 右侧装饰条 */
-        .right-line{
-            position:absolute;
-            right:0;
-            top:0;
-            bottom:0;
-            width:4px;
-            background:linear-gradient(180deg,#f4d03f,#c9a227)
-        }
-        
-        .poster-inner{
-            padding:50px 40px;
-            color:#fff;
-            height:100%;
-            display:flex;
-            flex-direction:column;
-            text-align:center
-        }
-        
-        /* Logo区域 */
-        .logo-area{
-            margin-bottom:30px
-        }
-        
-        .logo-chinese{
-            font-size:1.8rem;
-            font-weight:800;
-            letter-spacing:8px;
-            color:#fff;
-            margin-bottom:8px
-        }
-        
-        .logo-english{
-            font-size:0.7rem;
-            letter-spacing:4px;
-            color:#888
-        }
-        
-        /* 标题区域 */
-        .title-area{
-            margin-bottom:35px
-        }
-        
-        .season-badge{
-            display:inline-block;
-            padding:8px 24px;
-            border:1px solid #c9a227;
-            color:#c9a227;
-            font-size:0.85rem;
-            letter-spacing:4px;
-            margin-bottom:20px
-        }
-        
-        .main-title{
-            font-size:2.8rem;
-            font-weight:900;
-            line-height:1.2;
-            margin-bottom:12px;
-            background:linear-gradient(135deg,#fff,#c9a227);
-            -webkit-background-clip:text;
-            -webkit-text-fill-color:transparent;
-            background-clip:text
-        }
-        
-        .main-title-sub{
-            font-size:1.2rem;
-            color:#999;
-            letter-spacing:2px
-        }
-        
-        /* 课程图标 */
-        .course-icon{
-            width:120px;
-            height:120px;
-            margin:0 auto 30px;
-            border:2px solid #333;
-            border-radius:20px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            font-size:55px;
-            background:#151515
-        }
-        
-        /* 课程信息 */
-        .course-info{
-            background:#151515;
-            border:1px solid #333;
-            border-radius:12px;
-            padding:25px 20px;
-            margin-bottom:30px
-        }
-        
-        .course-name{
-            font-size:1.4rem;
-            font-weight:700;
-            color:#fff;
-            margin-bottom:15px
-        }
-        
-        .course-desc{
-            font-size:0.85rem;
-            color:#888;
-            line-height:1.8
-        }
-        
-        /* 价格区域 */
-        .price-area{
-            margin-bottom:30px
-        }
-        
-        .price-label{
-            font-size:0.85rem;
-            color:#666;
-            letter-spacing:2px;
-            margin-bottom:10px
-        }
-        
-        .price-box{
-            display:inline-block;
-            padding:15px 40px;
-            background:linear-gradient(135deg,#c9a227,#f4d03f);
-            border-radius:8px
-        }
-        
-        .price{
-            font-size:2.8rem;
-            font-weight:900;
-            color:#000;
-            line-height:1
-        }
-        
-        .price span{
-            font-size:1.4rem
-        }
-        
-        .price-original{
-            font-size:0.9rem;
-            color:#666;
-            text-decoration:line-through;
-            margin-top:8px
-        }
-        
-        /* 特点标签 */
-        .tags{
-            display:flex;
-            justify-content:center;
-            gap:10px;
-            margin-bottom:30px;
-            flex-wrap:wrap
-        }
-        
-        .tag{
-            padding:8px 16px;
-            background:#1a1a1a;
-            border:1px solid #333;
-            border-radius:20px;
-            font-size:0.8rem;
-            color:#aaa
-        }
-        
-        /* 联系区域 */
-        .contact-area{
-            margin-top:auto;
-            padding-top:25px;
-            border-top:1px solid #222
-        }
-        
-        .contact-title{
-            font-size:0.9rem;
-            color:#666;
-            letter-spacing:3px;
-            margin-bottom:20px
-        }
-        
-        .contact-grid{
-            display:grid;
-            grid-template-columns:1fr 1fr;
-            gap:15px
-        }
-        
-        .contact-item{
-            text-align:center;
-            padding:12px;
-            background:#151515;
-            border-radius:8px;
-            border:1px solid #2a2a2a
-        }
-        
-        .contact-label{
-            font-size:0.7rem;
-            color:#666;
-            margin-bottom:5px
-        }
-        
-        .contact-value{
-            font-size:0.9rem;
-            color:#fff
-        }
-        
-        .qr-section{
-            grid-column:span 2;
-            padding:15px;
-            background:#151515;
-            border-radius:8px;
-            border:1px solid #2a2a2a
-        }
-        
-        .qr-placeholder{
-            width:80px;
-            height:80px;
-            background:#fff;
-            border-radius:6px;
-            margin:8px auto 0;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            color:#999;
-            font-size:0.6rem
-        }
-        
-        /* 底部文字 */
-        .slogan{
-            margin-top:25px;
-            font-size:0.8rem;
-            color:#555;
-            letter-spacing:2px
-        }
-        
-        /* 装饰元素 */
-        .corner{
-            position:absolute;
-            width:30px;
-            height:30px;
-            border:2px solid #c9a227
-        }
-        
-        .corner-tl{top:15px;left:15px;border-right:none;border-bottom:none}
-        .corner-tr{top:15px;right:15px;border-left:none;border-bottom:none}
-        .corner-bl{bottom:15px;left:15px;border-right:none;border-top:none}
-        .corner-br{bottom:15px;right:15px;border-left:none;border-top:none}
-        
-        .print-tip{
-            text-align:center;
-            color:#444;
-            font-size:11px;
-            margin-top:15px
-        }
+        body{font-family:微软雅黑, Arial, sans-serif;background:#0a0a0a;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px}
+        .poster{width:450px;height:1200px;background:#0c0c0c;position:relative;overflow:hidden}
+        .top-decor{height:8px;background:linear-gradient(90deg,#c9a227,#f4d03f,#c9a227)}
+        .bottom-decor{position:absolute;bottom:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#c9a227,#f4d03f,#c9a227)}
+        .left-line{position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,#c9a227,#f4d03f)}
+        .right-line{position:absolute;right:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,#f4d03f,#c9a227)}
+        .poster-inner{padding:50px 40px;color:#fff;height:100%;display:flex;flex-direction:column;text-align:center}
+        .logo-chinese{font-size:1.8rem;font-weight:800;letter-spacing:8px;color:#fff;margin-bottom:8px}
+        .logo-english{font-size:0.7rem;letter-spacing:4px;color:#888}
+        .season-badge{display:inline-block;padding:8px 24px;border:1px solid #c9a227;color:#c9a227;font-size:0.85rem;letter-spacing:4px;margin-bottom:20px}
+        .main-title{font-size:2.8rem;font-weight:900;line-height:1.2;margin-bottom:12px;color:#fff}
+        .main-title-sub{font-size:1.2rem;color:#999;letter-spacing:2px}
+        .course-icon{width:120px;height:120px;margin:0 auto 30px;border:2px solid #333;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:55px;background:#151515}
+        .course-info{background:#151515;border:1px solid #333;border-radius:12px;padding:25px 20px;margin-bottom:30px}
+        .course-name{font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:15px}
+        .course-desc{font-size:0.85rem;color:#888;line-height:1.8}
+        .price-label{font-size:0.85rem;color:#666;letter-spacing:2px;margin-bottom:10px}
+        .price-box{display:inline-block;padding:15px 40px;background:linear-gradient(135deg,#c9a227,#f4d03f);border-radius:8px}
+        .price{font-size:2.8rem;font-weight:900;color:#000;line-height:1}
+        .price span{font-size:1.4rem}
+        .price-original{font-size:0.9rem;color:#666;text-decoration:line-through;margin-top:8px}
+        .tags{display:flex;justify-content:center;gap:10px;margin-bottom:30px;flex-wrap:wrap}
+        .tag{padding:8px 16px;background:#1a1a1a;border:1px solid #333;border-radius:20px;font-size:0.8rem;color:#aaa}
+        .contact-area{margin-top:auto;padding-top:25px;border-top:1px solid #222}
+        .contact-title{font-size:0.9rem;color:#666;letter-spacing:3px;margin-bottom:20px}
+        .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+        .contact-item{text-align:center;padding:12px;background:#151515;border-radius:8px;border:1px solid #2a2a2a}
+        .contact-label{font-size:0.7rem;color:#666;margin-bottom:5px}
+        .contact-value{font-size:0.9rem;color:#fff}
+        .qr-section{grid-column:span 2;padding:15px;background:#151515;border-radius:8px;border:1px solid #2a2a2a}
+        .qr-placeholder{width:80px;height:80px;background:#fff;border-radius:6px;margin:8px auto 0;display:flex;align-items:center;justify-content:center;color:#999;font-size:0.6rem}
+        .slogan{margin-top:25px;font-size:0.8rem;color:#555;letter-spacing:2px}
     </style>
 </head>
 <body>
@@ -300,48 +46,33 @@
 <div class="bottom-decor"></div>
 <div class="left-line"></div>
 <div class="right-line"></div>
-<div class="corner corner-tl"></div>
-<div class="corner corner-tr"></div>
-<div class="corner corner-bl"></div>
-<div class="corner corner-br"></div>
-
 <div class="poster-inner">
-<div class="logo-area">
+<div style="margin-bottom:30px">
 <div class="logo-chinese">乐造AI</div>
 <div class="logo-english">LEZAO AI EDUCATION</div>
 </div>
-
-<div class="title-area">
+<div style="margin-bottom:35px">
 <div class="season-badge">2024 秋季开学季</div>
 <div class="main-title">SCRATCH<br>图形化编程</div>
 <div class="main-title-sub">零基础入门 · 趣味学习</div>
 </div>
-
 <div class="course-icon">🧊</div>
-
 <div class="course-info">
 <div class="course-name">Scratch 少儿编程</div>
-<div class="course-desc">
-专为6-10岁儿童设计<br>
-拖拽式编程 零门槛入门<br>
-64课时 + 20+项目作品
+<div class="course-desc">专为6-10岁儿童设计<br>拖拽式编程 零门槛入门<br>64课时 + 20+项目作品</div>
 </div>
-</div>
-
-<div class="price-area">
-<div class="price-label">限时特惠 ·一口价</div>
+<div style="margin-bottom:30px">
+<div class="price-label">限时特惠 · 一口价</div>
 <div class="price-box">
 <div class="price"><span>¥</span>1499</div>
 <div class="price-original">原价 ¥2999</div>
 </div>
 </div>
-
 <div class="tags">
 <span class="tag">小班教学</span>
 <span class="tag">名师授课</span>
 <span class="tag">寓教于乐</span>
 </div>
-
 <div class="contact-area">
 <div class="contact-title">CONTACT US</div>
 <div class="contact-grid">
@@ -359,15 +90,8 @@
 </div>
 </div>
 </div>
-
-<div class="slogan">
-让每个孩子都能创造未来
+<div class="slogan">让每个孩子都能创造未来</div>
 </div>
-</div>
-</div>
-
-<div class="print-tip">
-📐 易拉宝建议尺寸：60×160cm / 80×200cm
 </div>
 </body>
 </html>
