@@ -16,17 +16,42 @@
 | **多角度分析** | 需要不同视角、决策选择 | meta-cognition-parallel |
 | **写提示词** | Prompt工程 | prompt-engineering-patterns |
 
-### 触发检查清单
+---
 
-收到消息时快速检查：
+## 🔧 技能清单检查表
 
-- [ ] 是否是复杂问题？（多步骤、需要推理）
-- [ ] 是否需要分析自身？（复盘、反思）
-- [ ] 是否是设计/方案评审？
-- [ ] 是否需要多角度分析？
-- [ ] 是否需要写提示词？
+**每次动手前必须检查：能用哪个技能？**
 
-**如果任一条件满足 → 立即使用相应技能！**
+| 场景 | 必须检查的技能 | 优先级 |
+|------|----------------|--------|
+| **搜索信息** | baidu-search, multi-search-engine, tavily-search | 高 |
+| **看图片** | minimax-understand-image + minimax-web-search | 高 |
+| **写飞书文档** | feishu-doc | 高 |
+| **做设计/UI** | superdesign | 高 |
+| **总结内容(URL/PDF)** | summarize | 高 |
+| **GitHub操作** | github-cli, github-actions-generator | 高 |
+| **自动化任务** | automation-workflows | 中 |
+| **安全检查** | security-best-practices | 中 |
+
+---
+
+## ⚡ 快速决策流程
+
+```
+收到任务
+    ↓
+1. 复杂吗？ → 是 → 思维链
+    ↓ 否
+2. 需要搜索？ → 是 → 用搜索技能
+    ↓ 否
+3. 看图片？ → 是 → minimax-understand-image
+    ↓ 否
+4. 写文档？ → 是 → feishu-doc
+    ↓ 否
+5. 做设计？ → 是 → superdesign
+    ↓ 否
+6. 直接回答
+```
 
 ---
 
