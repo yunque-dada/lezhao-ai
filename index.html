@@ -261,82 +261,58 @@
     <section class="campus" id="campus">
         <div class="section-header">
             <span class="section-label">校区环境</span>
-            <h2>真实环境·眼见为实</h2>
-            <p>走进乐造AI，感受专业与温馨的学习氛围</p>
+            <h2>眼见为实·欢迎参观</h2>
+            <p>河源首家少儿编程科技馆，让孩子爱上的学习空间</p>
         </div>
-        <div class="campus-grid">
-            <div class="campus-card campus-main">
-                <div class="campus-img" style="background:linear-gradient(135deg,#3b82f6,#6366f1);">
-                    <span style="font-size:4rem;">🏪</span>
-                </div>
-                <div class="campus-info">
-                    <h4>乐造AI门头</h4>
-                    <p>河源首家少儿编程科技馆</p>
-                </div>
-            </div>
-            <div class="campus-card">
-                <div class="campus-img" style="background:linear-gradient(135deg,#06b6d4,#3b82f6);">
-                    <span style="font-size:3rem;">💙</span>
-                </div>
-                <div class="campus-info">
-                    <h4>前台接待区</h4>
-                    <p>温馨舒适的接待空间</p>
+        <div class="campus-show">
+            <img src="img/campus.jpg" alt="乐造AI校区环境" class="campus-hero-img">
+            <div class="campus-overlay">
+                <div class="campus-badge">
+                    <span class="badge-icon">🏪</span>
+                    <div class="badge-text">
+                        <h4>乐造AI少儿创意中心</h4>
+                        <p>Maker(Int) Kids' Creative Center</p>
+                    </div>
                 </div>
             </div>
-            <div class="campus-card">
-                <div class="campus-img" style="background:linear-gradient(135deg,#8b5cf6,#d946ef);">
-                    <span style="font-size:3rem;">💻</span>
-                </div>
-                <div class="campus-info">
-                    <h4>多媒体教室</h4>
-                    <p>配备全新电脑设备</p>
-                </div>
+        </div>
+        <div class="campus-features">
+            <div class="campus-feature">
+                <span class="cf-icon">💻</span>
+                <span class="cf-text">多媒体教室</span>
             </div>
-            <div class="campus-card">
-                <div class="campus-img" style="background:linear-gradient(135deg,#f59e0b,#ef4444);">
-                    <span style="font-size:3rem;">🏆</span>
-                </div>
-                <div class="campus-info">
-                    <h4>荣誉墙</h4>
-                    <p>学员获奖成果展示</p>
-                </div>
+            <div class="campus-feature">
+                <span class="cf-icon">🖥️</span>
+                <span class="cf-text">前台接待</span>
             </div>
-            <div class="campus-card">
-                <div class="campus-img" style="background:linear-gradient(135deg,#10b981,#06b6d4);">
-                    <span style="font-size:3rem;">🎨</span>
-                </div>
-                <div class="campus-info">
-                    <h4>创意作品区</h4>
-                    <p>展示学员编程作品</p>
-                </div>
+            <div class="campus-feature">
+                <span class="cf-icon">🏆</span>
+                <span class="cf-text">荣誉展示</span>
             </div>
-            <div class="campus-card">
-                <div class="campus-img" style="background:linear-gradient(135deg,#ec4899,#8b5cf6);">
-                    <span style="font-size:3rem;">🧸</span>
-                </div>
-                <div class="campus-info">
-                    <h4>乐高体验区</h4>
-                    <p>动手实践乐趣多</p>
-                </div>
+            <div class="campus-feature">
+                <span class="cf-icon">🎮</span>
+                <span class="cf-text">体验区</span>
             </div>
         </div>
     </section>
 
     <style>
-        .campus{padding:120px 24px;background:#f8fafc}
-        .campus-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-        .campus-card{background:white;border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);transition:all 0.3s;border:1px solid #f1f5f9}
-        .campus-card:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(59,130,246,0.15)}
-        .campus-card.campus-main{grid-column:span 2;grid-row:span 2}
-        .campus-img{height:200px;display:flex;align-items:center;justify-content:center;color:white}
-        .campus-main .campus-img{height:424px}
-        .campus-info{padding:20px}
-        .campus-info h4{font-size:1.1rem;font-weight:600;margin-bottom:6px;color:#1e293b}
-        .campus-info p{font-size:0.9rem;color:#64748b}
-        @media(max-width:900px){
-            .campus-grid{grid-template-columns:1fr}
-            .campus-card.campus-main{grid-column:span 1;grid-row:span 1}
-            .campus-main .campus-img{height:250px}
+        .campus{padding:100px 24px;background:linear-gradient(180deg,#f8fafc,#fff)}
+        .campus-show{position:relative;max-width:1000px;margin:0 auto 50px;border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.15)}
+        .campus-hero-img{width:100%;display:block;height:auto}
+        .campus-overlay{position:absolute;bottom:0;left:0;right:0;padding:40px;background:linear-gradient(transparent,rgba(0,0,0,0.7))}
+        .campus-badge{display:flex;align-items:center;gap:16px;background:white;padding:16px 24px;border-radius:16px;max-width:400px}
+        .badge-icon{font-size:2.5rem}
+        .badge-text h4{font-size:1.2rem;font-weight:700;color:#1e293b;margin-bottom:4px}
+        .badge-text p{font-size:0.85rem;color:#64748b}
+        .campus-features{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+        .campus-feature{display:flex;align-items:center;gap:10px;padding:12px 24px;background:white;border-radius:50px;box-shadow:0 4px 15px rgba(0,0,0,0.08)}
+        .cf-icon{font-size:1.5rem}
+        .cf-text{font-size:1rem;font-weight:500;color:#1e293b}
+        @media(max-width:768px){
+            .campus-features{gap:12px}
+            .campus-feature{padding:10px 16px}
+            .badge-text{display:none}
         }
     </style>
 
