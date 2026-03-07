@@ -35,6 +35,26 @@
 
 ---
 
+## 🧠 自我改进检查（必须！）
+
+**每次任务后必须检查：**
+
+| 检查项 | 技能 | 操作 |
+|--------|------|------|
+| **命令失败？** | self-improving-agent | 记录到 .learnings/ERRORS.md |
+| **用户纠正？** | self-improving-agent | 记录到 .learnings/LEARNINGS.md |
+| **发现更好方法？** | self-improving-agent | 记录最佳实践 |
+| **重复问题？** | self-improving-agent | 标记 recurring |
+
+**工作流：**
+```
+工作前 → byterover query 查询相关知识
+工作中 → 出错立即记录
+工作后 → byterover curate 保存新模式
+```
+
+---
+
 ## ⚡ 快速决策流程
 
 ```
@@ -51,6 +71,8 @@
 5. 做设计？ → 是 → superdesign
     ↓ 否
 6. 直接回答
+    ↓
+任务完成后 → 检查：出错了吗？→ 记录到 self-improving-agent
 ```
 
 ---
