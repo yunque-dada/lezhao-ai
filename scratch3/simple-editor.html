@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google" value="notranslate">
+  <title>Scratch3 在线编程 - 乐造AI</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Microsoft YaHei', sans-serif;
+      background: #f5f5f5;
+    }
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header h1 {
+      font-size: 24px;
+    }
+    .header .btn {
+      background: rgba(255,255,255,0.2);
+      padding: 8px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    .header .btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    #scratch {
+      width: 100%;
+      height: calc(100vh - 60px);
+    }
+    .loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      z-index: 9999;
+    }
+    .loading.hidden {
+      display: none;
+    }
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid rgba(255,255,255,0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loading" id="loading">
+    <div class="loading-spinner"></div>
+    <p style="margin-top: 20px;">正在加载 Scratch3 编辑器...</p>
+  </div>
+
+  <div class="header">
+    <h1>🧩 Scratch3 在线编程 - 乐造AI</h1>
+    <div>
+      <button class="btn" onclick="saveProject()">💾 保存到本地</button>
+      <button class="btn" onclick="loadProject()">📂 打开项目</button>
+      <button class="btn" onclick="goHome()">🏠 返回首页</button>
+    </div>
+  </div>
+
+  <div id="scratch"></div>
+
+  <script src="lib.min.js"></script>
+  <script src="chunks/gui.js"></script>
+
+  <script>
+    // 简化配置
+    window.scratchConfig = {
+      // 用户信息（简化版，不需要登录）
+      session: {
+        token: "",
+        username: "访客"
+      },
+      
+      // 背包（禁用）
+      backpack: {
+        enable: false
+      },
+      
+      // 云变量（禁用）
+      cloudData: {
+        enable: false
+      },
+      
+      // 作品信息
+      projectInfo: {
+        projectName: "我的第一个项目",
+        authorUsername: "访客",
+        authorAvatar: './static/avatar.png'
+      },
+      
+      // Logo
+      logo: {
+        show: true,
+        url: "./static/logo.png",
+        handleClickLogo: function() {
+          goHome();
+        }
+      },
+      
+      // 菜单栏配置
+      menuBar: {
+        style: {
+          background: 'hsla(215, 100%, 65%, 1)'
+        },
+        languageButton: {
+          show: true,
+          defaultLanguage: 'zh-cn'
+        },
+        newButton: {
+          show: true
+        },
+        loadFileButton: {
+          show: true
+        },
+        saveFileButton: {
+          show: true
+        },
+        turboModeButton: {
+          show: true
+        },
+        helpButton: {
+          show: true
+        },
+        myStuff: {
+          show: false
+        },
+        userAvatar: {
+          show: true,
+          username: '访客',
+          avatar: './static/avatar.png'
+        },
+        // 自定义按钮
+        customButtons: []
+      },
+      
+      // 积木配置
+      blocks: {
+        scale: 0.8
+      },
+      
+      // 舞台配置
+      stageArea: {
+        fullscreenButton: {
+          show: true
+        },
+        startButton: {
+          show: true
+        },
+        stopButton: {
+          show: true
+        }
+      },
+      
+      // VM 初始化完成
+      handleVmInitialized: function(vm) {
+        window.vm = vm;
+        console.log("Scratch VM 初始化完成");
+      },
+      
+      // 项目加载完成
+      handleProjectLoaded: function() {
+        console.log("项目加载完成");
+        document.getElementById('loading').classList.add('hidden');
+      },
+      
+      // 默认项目加载完成
+      handleDefaultProjectLoaded: function() {
+        console.log("默认项目加载完成");
+        document.getElementById('loading').classList.add('hidden');
+      },
+      
+      // 默认项目
+      defaultProjectURL: "./static/project.sb3",
+      
+      // 素材库配置
+      assets: {
+        assetHost: './static',
+        defaultIndex: {
+          sprites: "./static/json_index/sprites.json",
+          costumes: "./static/json_index/costumes.json",
+          backdrops: "./static/json_index/backdrops.json",
+          sounds: "./static/json_index/sounds.json"
+        }
+      }
+    };
+
+    // 保存项目到本地
+    function saveProject() {
+      window.scratch.getProjectFile(function(file) {
+        var projectName = window.scratch.getProjectName() || 'scratch-project';
+        var blob = new Blob([file], {type: 'application/x-scratch3'});
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = projectName + '.sb3';
+        a.click();
+        URL.revokeObjectURL(url);
+      });
+    }
+
+    // 从本地打开项目
+    function loadProject() {
+      var input = document.createElement('input');
+      input.type = 'file';
+      input.accept = '.sb3';
+      input.onchange = function(e) {
+        var file = e.target.files[0];
+        if (file) {
+          var reader = new FileReader();
+          reader.onload = function(e) {
+            var projectData = e.target.result;
+            window.vm.loadProject(projectData, function() {
+              console.log("项目加载成功");
+            });
+          };
+          reader.readAsArrayBuffer(file);
+        }
+      };
+      input.click();
+    }
+
+    // 返回首页
+    function goHome() {
+      window.location.href = 'index.html';
+    }
+
+    // 页面加载完成后隐藏loading
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('loading').classList.add('hidden');
+      }, 5000);
+    });
+  </script>
+</body>
+
+</html>
