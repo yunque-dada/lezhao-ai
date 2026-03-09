@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scratch启蒙班 - 乐造AI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif; background: #1a1a2e; color: #ccc; line-height: 1.8; }
+        
+        .header { background: rgba(255,255,255,0.95); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .logo { font-size: 24px; font-weight: bold; color: #FF6B35; }
+        .nav a { text-decoration: none; color: #333; margin-left: 25px; font-size: 15px; }
+        .nav a:hover { color: #FF6B35; }
+        
+        .hero { 
+            text-align: center; 
+            padding: 80px 20px; 
+            background: linear-gradient(135deg, #FF6B35 0%, #FF9F1C 100%); 
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800') center/cover;
+            opacity: 0.2;
+        }
+        .hero h1 { font-size: 48px; margin-bottom: 15px; }
+        .hero p { font-size: 20px; opacity: 0.9; }
+        
+        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
+        
+        .section { background: #16213e; border-radius: 20px; padding: 40px; margin-bottom: 30px; }
+        .section h2 { color: #FF6B35; font-size: 28px; margin-bottom: 25px; border-bottom: 2px solid #FF6B35; padding-bottom: 15px; }
+        .section h3 { color: white; font-size: 22px; margin: 30px 0 15px 0; }
+        
+        .tag { display: inline-block; background: #FF6B35; color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; margin-bottom: 20px; }
+        
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 25px 0; }
+        .info-item { background: #1a1a2e; padding: 20px; border-radius: 10px; text-align: center; }
+        .info-item .label { color: #888; font-size: 14px; }
+        .info-item .value { color: #FF6B35; font-size: 24px; font-weight: bold; margin-top: 10px; }
+        
+        .outline { counter-reset: chapter; }
+        .chapter { background: #1a1a2e; border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .chapter h4 { color: #FF6B35; font-size: 20px; margin-bottom: 15px; }
+        .chapter ul { padding-left: 20px; }
+        .chapter li { margin-bottom: 8px; color: #ccc; }
+        
+        .goal { display: flex; align-items: center; background: #1a1a2e; padding: 15px 20px; border-radius: 10px; margin-bottom: 15px; }
+        .goal-icon { font-size: 30px; margin-right: 15px; }
+        .goal-text { color: white; font-size: 16px; }
+        
+        .faq-item { background: #1a1a2e; padding: 20px; border-radius: 10px; margin-bottom: 15px; }
+        .faq-question { color: #FF6B35; font-weight: bold; margin-bottom: 10px; }
+        
+        .cta { text-align: center; padding: 60px 20px; }
+        .cta h2 { color: white; font-size: 32px; margin-bottom: 20px; }
+        .btn { display: inline-block; padding: 18px 60px; background: #FF6B35; color: white; text-decoration: none; border-radius: 50px; font-size: 18px; transition: all 0.3s; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,107,53,0.4); }
+        
+        .footer { background: #0f0f1a; color: #666; padding: 30px; text-align: center; }
+        
+        @media (max-width: 768px) { .hero h1 { font-size: 32px; } .container { padding: 30px 15px; } .section { padding: 25px; } }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">🎓 乐造AI</div>
+        <div class="nav">
+            <a href="index.html">首页</a>
+            <a href="courses.html">课程介绍</a>
+            <a href="scratch.html">Scratch</a>
+        </div>
+    </div>
+
+    <div class="hero">
+        <h1>🧩 Scratch 启蒙班</h1>
+        <p>适合 6-10 岁 | 40节课 | 8人小班</p>
+    </div>
+
+    <div class="container">
+        <!-- 课程简介 -->
+        <div class="section">
+            <span class="tag">图形化编程</span>
+            <h2>📚 课程简介</h2>
+            <p>Scratch是由麻省理工学院(MIT)专门为青少年设计的图形化编程工具。本课程通过拖拽积木块的方式，让孩子轻松入门编程，培养逻辑思维、创造力和问题解决能力。</p>
+            <p style="margin-top: 15px;">无需任何编程基础，孩子只需发挥想象力，就能创造出动画、游戏、故事等丰富多彩的作品。</p>
+            
+            <div class="info-grid">
+                <div class="info-item"><div class="label">适合年龄</div><div class="value">6-10岁</div></div>
+                <div class="info-item"><div class="label">课程时长</div><div class="value">16次课</div></div>
+                <div class="info-item"><div class="label">班级人数</div><div class="value">8人</div></div>
+                <div class="info-item"><div class="label">课程费用</div><div class="value">¥2580</div></div>
+            </div>
+        </div>
+
+        <!-- 课程大纲 -->
+        <div class="section">
+            <h2>📋 详细课程大纲</h2>
+            <div class="outline">
+                <div class="chapter">
+                    <h4>🅰️ 第一阶段：编程入门（第1-10节）</h4>
+                    <ul>
+                        <li>第1节：认识Scratch - 了解编程世界，打开Scratch软件</li>
+                        <li>第2节：角色世界 - 创建第一个角色，设置角色大小和位置</li>
+                        <li>第3节：舞台设计 - 使用背景，设置不同的场景</li>
+                        <li>第4节：积木块初体验 - 认识积木块的分类和作用</li>
+                        <li>第5节：让角色动起来 - 移动、旋转、跳转到指定位置</li>
+                        <li>第6节：声音世界 - 添加背景音乐和音效</li>
+                        <li>第7节：造型切换 - 让角色动起来的方法</li>
+                        <li>第8节：等待与重复 - 控制角色行动节奏</li>
+                        <li>第9节：第一个作品 - 制作简单的动画</li>
+                        <li>第10节：阶段总结 - 展示和分享作品</li>
+                    </ul>
+                </div>
+                
+                <div class="chapter">
+                    <h4>🅱️ 第二阶段：运动与外观（第11-20节）</h4>
+                    <ul>
+                        <li>第11节：坐标系统 - 理解X轴和Y轴</li>
+                        <li>第12节：滑行指令 - 平滑移动角色</li>
+                        <li>第13节：面向方向 - 改变角色的朝向</li>
+                        <li>第14节：造型艺术 - 绘制自己的角色造型</li>
+                        <li>第15节：特效处理 - 添加颜色、特效</li>
+                        <li>第16节：图层管理 - 控制角色的层次</li>
+                        <li>第17节：坐标运算 - 简单的数学计算</li>
+                        <li>第18节：随机数 - 增添变化的趣味</li>
+                        <li>第19节：动画短片 - 制作连贯的故事情节</li>
+                        <li>第20节：阶段项目 - 动画故事创作</li>
+                    </ul>
+                </div>
+                
+                <div class="chapter">
+                    <h4>🅲️ 第三阶段：事件与控制（第21-30节）</h4>
+                    <ul>
+                        <li>第21节：事件触发 - 理解"当..."积木的作用</li>
+                        <li>第22节：按键控制 - 用键盘操控角色</li>
+                        <li>第23节：鼠标交互 - 鼠标点击和移动事件</li>
+                        <li>第24节：条件判断 - 如果...那么...</li>
+                        <li>第25节：碰撞检测 - 角色之间的碰撞</li>
+                        <li>第26节：循环结构 - 重复执行积木</li>
+                        <li>第27节：无限循环 - 一直重复直到...</li>
+                        <li>第28节：循环条件 - 满足条件时停止循环</li>
+                        <li>第29节：逻辑运算 - 并且、或者、非</li>
+                        <li>第30节：阶段项目 - 交互小游戏</li>
+                    </ul>
+                </div>
+                
+                <div class="chapter">
+                    <h4>🅳️ 第四阶段：综合项目（第31-40节）</h4>
+                    <ul>
+                        <li>第31节：变量入门 - 什么是变量</li>
+                        <li>第32节：计分系统 - 用变量记录分数</li>
+                        <li>第33节：倒计时 - 时间限制功能</li>
+                        <li>第34节：生命值 - 游戏生命系统</li>
+                        <li>第35节：关卡设计 - 多个关卡的切换</li>
+                        <li>第36节：游戏规则 - 胜负判定</li>
+                        <li>第37-38节：项目开发 - 完整游戏制作</li>
+                        <li>第39节：优化与美化 - 添加细节和特效</li>
+                        <li>第40节：毕业展示 - 作品展示与分享</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 学习目标 -->
+        <div class="section">
+            <h2>🎯 学习目标</h2>
+            <div class="goal"><span class="goal-icon">✅</span><span class="goal-text">熟练掌握Scratch软件的基本操作</span></div>
+            <div class="goal"><span class="goal-icon">✅</span><span class="goal-text">理解顺序、循环、条件三大编程基础结构</span></div>
+            <div class="goal"><span class="goal-icon">✅</span><span class="goal-text">能够独立设计和完成3-5个小游戏</span></div>
+            <div class="goal"><span class="goal-icon">✅</span><span class="goal-text">培养逻辑思维和问题分析能力</span></div>
+            <div class="goal"><span class="goal-icon">✅</span><span class="goal-text">提高创造力和想象力</span></div>
+            <div class="goal"><span class="goal-icon">✅</span><span class="goal-text">学会作品分享和团队协作</span></div>
+        </div>
+
+        <!-- 课程特色 -->
+        <div class="section">
+            <h2>✨ 课程特色</h2>
+            <h3>🎮 项目驱动式学习</h3>
+            <p>每节课都有一个小项目，通过完成具体作品来学习编程知识，告别枯燥的理论讲解。</p>
+            
+            <h3>👨‍🏫 小班教学</h3>
+            <p>8人小班，老师可以关注到每个孩子，确保学习效果。</p>
+            
+            <h3>🏆 竞赛辅导</h3>
+            <p>优秀学员可获得Scratch竞赛辅导，为升学加分。</p>
+            
+            <h3>📱 在线编程</h3>
+            <p>无需安装软件，浏览器直接编程，随时随地学习。</p>
+        </div>
+
+        <!-- 上课形式 -->
+        <div class="section">
+            <h2>🖥️ 上课形式</h2>
+            <div class="info-grid">
+                <div class="info-item"><div class="label">上课方式</div><div class="value">线上直播</div></div>
+                <div class="info-item"><div class="label">课程时长</div><div class="value">60分钟/节</div></div>
+                <div class="info-item"><div class="label">上课频率</div><div class="value">1-2节/周</div></div>
+                <div class="info-item"><div class="label">课后辅导</div><div class="value">随时答疑</div></div>
+            </div>
+        </div>
+
+        <!-- 常见问题 -->
+        <div class="section">
+            <h2>❓ 常见问题</h2>
+            <div class="faq-item">
+                <div class="faq-question">Q: 需要购买什么设备吗？</div>
+                <div>A: 电脑或平板即可，需要稳定的网络。建议使用电脑以获得更好的编程体验。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: 孩子没有任何编程基础能学吗？</div>
+                <div>A: 可以的！本课程专为零基础孩子设计，从最简单的操作开始。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: 学完后能达到什么水平？</div>
+                <div>A: 学完可以独立制作简单的小游戏，具备基本的编程思维。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: 可以退费吗？</div>
+                <div>A: 第一节课不满意全额退款，之后按剩余课时退费。</div>
+            </div>
+        </div>
+
+        <!-- 报名 -->
+        <div class="cta">
+            <h2>🚀 开启孩子的编程之旅</h2>
+            <a href="#" class="btn">立即报名</a>
+            <p style="margin-top: 20px; color: #888;">咨询热线：xxx-xxxx-xxxx</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 乐造AI | 让每个孩子都能创造</p>
+    </div>
+</body>
+</html>

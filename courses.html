@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程介绍 - 乐造AI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif; background: #0a0a12; min-height: 100vh; color: #fff; }
+        
+        .header { 
+            background: rgba(20, 20, 30, 0.95); 
+            padding: 15px 50px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        .logo { font-size: 26px; font-weight: bold; color: #FF6B35; }
+        .nav { display: flex; gap: 30px; }
+        .nav a { 
+            text-decoration: none; 
+            color: #888; 
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+        .nav a:hover, .nav a.active { color: #FF6B35; }
+        
+        .hero { text-align: center; padding: 120px 20px 60px; background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%); }
+        .hero h1 { font-size: 42px; margin-bottom: 15px; }
+        .hero p { font-size: 16px; color: #888; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px 80px; }
+        
+        /* 课程卡片 */
+        .course-card {
+            background: linear-gradient(145deg, #14141f, #1a1a2e);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            transition: all 0.3s;
+            border: 1px solid #2a2a3e;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+            min-height: 160px;
+        }
+        .course-card:hover {
+            transform: translateX(10px);
+            border-color: #FF6B35;
+            box-shadow: 0 10px 30px rgba(255,107,53,0.1);
+        }
+        
+        /* 背景图片区域 */
+        .course-bg {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 300px;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            border-radius: 0 20px 20px 0;
+        }
+        
+        .course-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .course-info { flex: 1; position: relative; z-index: 1; }
+        
+        .course-header { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
+        .course-name { font-size: 24px; font-weight: bold; }
+        .course-tag { 
+            background: rgba(255,107,53,0.2); 
+            color: #FF6B35; 
+            padding: 4px 12px; 
+            border-radius: 20px; 
+            font-size: 12px;
+        }
+        
+        .course-desc { color: #888; font-size: 14px; margin-bottom: 15px; }
+        
+        .course-meta { display: flex; gap: 25px; font-size: 14px; color: #666; }
+        .course-meta span { color: #fff; }
+        
+        .course-price-box {
+            text-align: right;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .course-price { 
+            font-size: 36px; 
+            font-weight: bold; 
+            color: #FF6B35;
+        }
+        .course-price small { font-size: 14px; color: #666; }
+        .course-times { 
+            font-size: 14px; 
+            color: #888; 
+            margin-top: 5px;
+        }
+        
+        .course-btn {
+            display: inline-block;
+            background: #FF6B35;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        /* 底部 */
+        .footer { background: #05050a; color: #444; padding: 30px; text-align: center; }
+        
+        @media (max-width: 768px) {
+            .course-card { flex-direction: column; text-align: center; }
+            .course-bg { display: none; }
+            .course-meta { justify-content: center; }
+            .course-price-box { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">🎓 乐造AI</div>
+        <div class="nav">
+            <a href="index.html">首页</a>
+            <a href="courses.html" class="active">课程介绍</a>
+            <a href="scratch.html">在线编程</a>
+        </div>
+    </div>
+
+    <div class="hero">
+        <h1>📚 课程体系</h1>
+        <p>适合3-18岁孩子的编程教育</p>
+    </div>
+
+    <div class="container">
+        
+        <!-- 乐高大颗粒 -->
+        <a href="lego-course.html" class="course-card">
+            <div class="course-bg" style="background-image: url('https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=400');"></div>
+            <div class="course-icon" style="background: linear-gradient(135deg, #e74c3c, #f39c12);">🧱</div>
+            <div class="course-info">
+                <div class="course-header">
+                    <div class="course-name">乐高大颗粒</div>
+                    <span class="course-tag">幼儿启蒙</span>
+                </div>
+                <div class="course-desc">幼儿乐高启蒙，通过色彩鲜艳的大颗粒积木，培养动手能力和创造力</div>
+                <div class="course-meta">
+                    <div>适合 <span>3-5岁</span></div>
+                    <div>班级 <span>6人小班</span></div>
+                    <div>形式 <span>🏫 线下授课</span></div>
+                </div>
+            </div>
+            <div class="course-price-box">
+                <div class="course-price">¥2580<small>/16次课</small></div>
+                <div class="course-btn">查看详情 →</div>
+            </div>
+        </a>
+        
+        <!-- 乐高WeDo -->
+        <a href="wedo-course.html" class="course-card">
+            <div class="course-bg" style="background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400');"></div>
+            <div class="course-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">🤖</div>
+            <div class="course-info">
+                <div class="course-header">
+                    <div class="course-name">乐高 WeDo</div>
+                    <span class="course-tag">机器人编程</span>
+                </div>
+                <div class="course-desc">乐高WeDo机器人编程，自己动手搭建可以动的机器人</div>
+                <div class="course-meta">
+                    <div>适合 <span>6-8岁</span></div>
+                    <div>班级 <span>6人小班</span></div>
+                    <div>形式 <span>🏫 线下授课</span></div>
+                </div>
+            </div>
+            <div class="course-price-box">
+                <div class="course-price">¥2580<small>/16次课</small></div>
+                <div class="course-btn">查看详情 →</div>
+            </div>
+        </a>
+        
+        <!-- Scratch -->
+        <a href="scratch-course.html" class="course-card">
+            <div class="course-bg" style="background-image: url('https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400');"></div>
+            <div class="course-icon" style="background: linear-gradient(135deg, #FF6B35, #FF9F1C);">🧩</div>
+            <div class="course-info">
+                <div class="course-header">
+                    <div class="course-name">Scratch 编程</div>
+                    <span class="course-tag">图形化编程</span>
+                </div>
+                <div class="course-desc">图形化编程，通过拖拽积木块创造动画、游戏和故事</div>
+                <div class="course-meta">
+                    <div>适合 <span>6-10岁</span></div>
+                    <div>班级 <span>8人小班</span></div>
+                    <div>形式 <span>🏫 线下授课</span></div>
+                </div>
+            </div>
+            <div class="course-price-box">
+                <div class="course-price">¥2580<small>/16次课</small></div>
+                <div class="course-btn">查看详情 →</div>
+            </div>
+        </a>
+        
+        <!-- Python -->
+        <a href="python-course.html" class="course-card">
+            <div class="course-bg" style="background-image: url('https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=400');"></div>
+            <div class="course-icon" style="background: linear-gradient(135deg, #F35981, #FB7397);">🐍</div>
+            <div class="course-info">
+                <div class="course-header">
+                    <div class="course-name">Python 编程</div>
+                    <span class="course-tag">代码编程</span>
+                </div>
+                <div class="course-desc">Python代码编程，为AI和数据分析打下基础</div>
+                <div class="course-meta">
+                    <div>适合 <span>10-14岁</span></div>
+                    <div>班级 <span>10人小班</span></div>
+                    <div>形式 <span>🏫 线下授课</span></div>
+                </div>
+            </div>
+            <div class="course-price-box">
+                <div class="course-price">¥2580<small>/16次课</small></div>
+                <div class="course-btn">查看详情 →</div>
+            </div>
+        </a>
+        
+        <!-- Web -->
+        <a href="web-course.html" class="course-card">
+            <div class="course-bg" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400');"></div>
+            <div class="course-icon" style="background: linear-gradient(135deg, #667eea, #764ba2);">🌐</div>
+            <div class="course-info">
+                <div class="course-header">
+                    <div class="course-name">Web 创意班</div>
+                    <span class="course-tag">网页开发</span>
+                </div>
+                <div class="course-desc">HTML/CSS/JavaScript网页开发</div>
+                <div class="course-meta">
+                    <div>适合 <span>12-16岁</span></div>
+                    <div>班级 <span>10人小班</span></div>
+                    <div>形式 <span>🏫 线下授课</span></div>
+                </div>
+            </div>
+            <div class="course-price-box">
+                <div class="course-price">¥2580<small>/16次课</small></div>
+                <div class="course-btn">查看详情 →</div>
+            </div>
+        </a>
+        
+        <!-- AI -->
+        <a href="ai-course.html" class="course-card">
+            <div class="course-bg" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400');"></div>
+            <div class="course-icon" style="background: linear-gradient(135deg, #00c6ff, #0072ff);">🧠</div>
+            <div class="course-info">
+                <div class="course-header">
+                    <div class="course-name">AI 探索班</div>
+                    <span class="course-tag">人工智能</span>
+                </div>
+                <div class="course-desc">人工智能/机器学习入门</div>
+                <div class="course-meta">
+                    <div>适合 <span>12-18岁</span></div>
+                    <div>班级 <span>6人小班</span></div>
+                    <div>形式 <span>🏫 线下授课</span></div>
+                </div>
+            </div>
+            <div class="course-price-box">
+                <div class="course-price">¥2580<small>/16次课</small></div>
+                <div class="course-btn">查看详情 →</div>
+            </div>
+        </a>
+        
+    </div>
+
+    <div class="footer">
+        <p>© 2026 乐造AI | 让每个孩子都能创造</p>
+    </div>
+</body>
+</html>

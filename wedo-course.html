@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐高WeDo - 乐造AI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif; background: #1a1a2e; color: #ccc; line-height: 1.8; }
+        
+        .header { background: rgba(255,255,255,0.95); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .logo { font-size: 24px; font-weight: bold; color: #3498db; }
+        .nav a { text-decoration: none; color: #333; margin-left: 25px; font-size: 15px; }
+        .nav a:hover { color: #3498db; }
+        
+        .hero { 
+            text-align: center; 
+            padding: 80px 20px; 
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); 
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800') center/cover;
+            opacity: 0.2;
+        }
+        .hero h1 { font-size: 48px; margin-bottom: 15px; }
+        .hero p { font-size: 20px; opacity: 0.9; }
+        
+        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
+        
+        .section { background: #16213e; border-radius: 20px; padding: 40px; margin-bottom: 30px; }
+        .section h2 { color: #3498db; font-size: 28px; margin-bottom: 25px; border-bottom: 2px solid #3498db; padding-bottom: 15px; }
+        .section h3 { color: white; font-size: 22px; margin: 30px 0 15px 0; }
+        
+        .tag { display: inline-block; background: #3498db; color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; margin-bottom: 20px; }
+        
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 25px 0; }
+        .info-item { background: #1a1a2e; padding: 20px; border-radius: 10px; text-align: center; }
+        .info-item .label { color: #888; font-size: 14px; }
+        .info-item .value { color: #3498db; font-size: 24px; font-weight: bold; margin-top: 10px; }
+        
+        .outline { counter-reset: chapter; }
+        .chapter { background: #1a1a2e; border-radius: 15px; padding: 25px; margin-bottom: 20px; }
+        .chapter h4 { color: #3498db; font-size: 20px; margin-bottom: 15px; }
+        .chapter ul { padding-left: 20px; }
+        .chapter li { margin-bottom: 8px; color: #ccc; }
+        
+        .goal { display: flex; align-items: center; background: #1a1a2e; padding: 15px 20px; border-radius: 10px; margin-bottom: 15px; }
+        .goal-icon { font-size: 30px; margin-right: 15px; }
+        .goal-text { color: white; font-size: 16px; }
+        
+        .faq-item { background: #1a1a2e; padding: 20px; border-radius: 10px; margin-bottom: 15px; }
+        .faq-question { color: #3498db; font-weight: bold; margin-bottom: 10px; }
+        
+        .cta { text-align: center; padding: 60px 20px; }
+        .cta h2 { color: white; font-size: 32px; margin-bottom: 20px; }
+        .btn { display: inline-block; padding: 18px 60px; background: #3498db; color: white; text-decoration: none; border-radius: 50px; font-size: 18px; transition: all 0.3s; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(52,152,219,0.4); }
+        
+        .footer { background: #0f0f1a; color: #666; padding: 30px; text-align: center; }
+        
+        @media (max-width: 768px) { .hero h1 { font-size: 32px; } .container { padding: 30px 15px; } .section { padding: 25px; } }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">🎓 乐造AI</div>
+        <div class="nav">
+            <a href="index.html">首页</a>
+            <a href="courses.html">课程介绍</a>
+        </div>
+    </div>
+
+    <div class="hero">
+        <h1>🤖 乐高 WeDo 机器人</h1>
+        <p>适合 6-8 岁 | 48节课 | 线下授课</p>
+    </div>
+
+    <div class="container">
+        <!-- 课程简介 -->
+        <div class="section">
+            <span class="tag">机器人编程</span>
+            <h2>📚 课程简介</h2>
+            <p>乐高WeDo是专为6-8岁儿童设计的机器人编程课程，结合乐高积木和简单编程，让孩子自己动手搭建可以动的机器人！</p>
+            <p style="margin-top: 15px;">通过WeDo软件，孩子可以给机器人编写程序，让它完成各种有趣的任务。这是进入机器人世界的第一步！</p>
+            
+            <div class="info-grid">
+                <div class="info-item"><div class="label">适合年龄</div><div class="value">6-8岁</div></div>
+                <div class="info-item"><div class="label">课程时长</div><div class="value">16次课</div></div>
+                <div class="info-item"><div class="label">班级人数</div><div class="value">6人</div></div>
+                <div class="info-item"><div class="label">课程费用</div><div class="value">¥2580</div></div>
+            </div>
+        </div>
+
+        <!-- 课程大纲 -->
+        <div class="section">
+            <h2>📋 详细课程大纲</h2>
+            <div class="outline">
+                <div class="chapter">
+                    <h4>🅰️ 第一阶段：WeDo入门（第1-12节）</h4>
+                    <ul>
+                        <li>第1节：认识WeDo - 了解WeDo套件和软件</li>
+                        <li>第2节：马达初体验 - 让马达转动起来</li>
+                        <li>第3节：倾斜传感器 - 感应倾斜方向</li>
+                        <li>第4节：距离传感器 - 感应远近</li>
+                        <li>第5节：编程界面 - 认识WeDo编程模块</li>
+                        <li>第6节：马达程序 - 控制马达启动和停止</li>
+                        <li>第7节：声音模块 - 添加声音效果</li>
+                        <li>第8节：显示模块 - 控制显示内容</li>
+                        <li>第9节：等待模块 - 时间控制</li>
+                        <li>第10节：循环模块 - 重复执行</li>
+                        <li>第11节：简单程序 - 综合运用</li>
+                        <li>第12节：阶段项目 - 创意机器人</li>
+                    </ul>
+                </div>
+                
+                <div class="chapter">
+                    <h4>🅱️ 第二阶段：动物世界（第13-24节）</h4>
+                    <ul>
+                        <li>第13节：小鸟机器人 - 会动的鸟</li>
+                        <li>第14节：猴子机器人 - 荡秋千的猴子</li>
+                        <li>第15节：大象机器人 - 的长鼻子</li>
+                        <li>第16节：狮子机器人 - 会摇头</li>
+                        <li>第17节：飞机机器人 - 转动的螺旋桨</li>
+                        <li>第18节：帆船机器人 - 摆动的船帆</li>
+                        <li>第19节：鳄鱼机器人 - 张大嘴巴</li>
+                        <li>第20节：甲虫机器人 - 爬行机器人</li>
+                        <li>第21节：兔子机器人 - 跳跃机器人</li>
+                        <li>第22节：蛇机器人 - 扭动的蛇</li>
+                        <li>第23节：企鹅机器人 - 摇摆企鹅</li>
+                        <li>第24节：阶段项目 - 动物园</li>
+                    </ul>
+                </div>
+                
+                <div class="chapter">
+                    <h4>🅲️ 第三阶段：交通工具（第25-36节）</h4>
+                    <ul>
+                        <li>第25节：火车机器人 - 冒烟的火车</li>
+                        <li>第26节：缆车机器人 - 上下缆车</li>
+                        <li>第27节：起重机机器人 - 吊起物体</li>
+                        <li>第28节：挖土机机器人 - 转动的挖斗</li>
+                        <li>第29节：卡车机器人 - 倾斜车厢</li>
+                        <li>第30节：电梯机器人 - 上下电梯</li>
+                        <li>第31节：风扇机器人 - 转动的扇叶</li>
+                        <li>第32节：旋转门机器人 - 旋转门</li>
+                        <li>第33节：闸机机器人 - 拦车杆</li>
+                        <li>第34节：汽车机器人 - 前进后退</li>
+                        <li>第35节：摩托车机器人 - 平衡挑战</li>
+                        <li>第36节：阶段项目 - 交通展</li>
+                    </ul>
+                </div>
+                
+                <div class="chapter">
+                    <h4>🅳️ 第四阶段：智能机器人（第37-48节）</h4>
+                    <ul>
+                        <li>第37节：智能风扇 - 根据温度自动转动</li>
+                        <li>第38节：智能门 - 有人自动开门</li>
+                        <li>第39节：智能车 - 遇到障碍物停车</li>
+                        <li>第40节：智能电梯 - 自动选层</li>
+                        <li>第41节：智能灌溉 - 自动浇水</li>
+                        <li>第42节：智能垃圾筒 - 自动打开</li>
+                        <li>第43-44节：智能停车场</li>
+                        <li>第45-46节：智能工厂</li>
+                        <li>第47节：毕业作品设计</li>
+                        <li>第48节：毕业展示与比赛</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 学习目标 -->
+        <div class="section">
+            <h2>🎯 学习目标</h2>
+            <div class="goal"><span class="goal-icon">✅</span><span class="goal-text">掌握WeDo机器人的搭建技巧</span></div>
+            <div class="goal"><span class="goal-icon">✅</span><span class="goal-text">学会使用WeDo图形化编程软件</span></div>
+            <div class="goal"><span class="goal-icon">✅</span><span class="goal-text">理解传感器的作用和使用方法</span></div>
+            <div class="goal"><span class="goal-icon">✅</span><span class="goal-text">培养逻辑思维和解决问题的能力</span></div>
+            <div class="goal"><span class="goal-icon">✅</span><span class="goal-text">为学习EV3/Scratch打基础</span></div>
+            <div class="goal"><span class="goal-icon">✅</span><span class="goal-text">参加机器人竞赛</span></div>
+        </div>
+
+        <!-- 课程特色 -->
+        <div class="section">
+            <h2>✨ 课程特色</h2>
+            <h3>🤖 乐高正品WeDo</h3>
+            <p>使用乐高官方WeDo2.0教具，品质有保障。</p>
+            
+            <h3>👨‍🏫 线下小班教学</h3>
+            <p>6人小班，老师面对面指导，动手实践时间充足。</p>
+            
+            <h3>🧩 项目式学习</h3>
+            <p>每个阶段都有完整的项目作品，成就感满满。</p>
+            
+            <h3>🏆 竞赛辅导</h3>
+            <p>优秀学员可参加机器人竞赛，锻炼实战能力。</p>
+        </div>
+
+        <!-- 上课形式 -->
+        <div class="section">
+            <h2>🏫 上课形式（线下）</h2>
+            <div class="info-grid">
+                <div class="info-item"><div class="label">上课地点</div><div class="value">乐造AI校区</div></div>
+                <div class="info-item"><div class="label">课程时长</div><div class="value">90分钟/节</div></div>
+                <div class="info-item"><div class="label">上课频率</div><div class="value">1节/周</div></div>
+                <div class="info-item"><div class="label">教具</div><div class="value">乐高WeDo</div></div>
+            </div>
+        </div>
+
+        <!-- 常见问题 -->
+        <div class="section">
+            <h2>❓ 常见问题</h2>
+            <div class="faq-item">
+                <div class="faq-question">Q: 没有编程基础能学吗？</div>
+                <div>A: 可以的，WeDo采用图形化编程，非常适合零基础孩子。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: 6岁会不会太小？</div>
+                <div>A: WeDo专为6-8岁设计，6岁正好是黄金入门年龄。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: 学完可以做什么？</div>
+                <div>A: 可以继续学习乐高EV3或Scratch编程。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: 可以试课吗？</div>
+                <div>A: 可以的，提供免费试课体验。</div>
+            </div>
+        </div>
+
+        <!-- 报名 -->
+        <div class="cta">
+            <h2>🚀 开启孩子的机器人之旅</h2>
+            <a href="#" class="btn">立即报名</a>
+            <p style="margin-top: 20px; color: #888;">校区地址：xxx市xxx区xxx路</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 乐造AI | 让每个孩子都能创造</p>
+    </div>
+</body>
+</html>
